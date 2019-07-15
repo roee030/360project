@@ -1,10 +1,9 @@
 import React from 'react'
-
+import { Link } from "react-router-dom";
+import Hero from "../components/Hero";
  function Home() {
     return (
-        <div>
-        hello from single Hemo page
-        </div>
-    )
+        <Hero hero="defaultHero" />
+    );
 }
 export default Home;
