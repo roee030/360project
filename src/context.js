@@ -3,13 +3,13 @@ import React, { Component } from 'react'
 const RoomContext = React.createContext();
 export default class RoomProvider extends Component {
 
-    state={
-
-
-    }
+    state = {
+        greeting: 'Hello',
+        name: 'Roee'
+    };
     render() {
         return (
-            <RoomContext.Provider value="hello">
+            <RoomContext.Provider value={{...this.state}}>
             {this.props.children}
             </RoomContext.Provider>
         )
