@@ -3,12 +3,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const apartmentSchema = new Schema({
-  numOfRooms: { type: int, required: true },
+  numOfRooms: { type: Number, required: true },
   floor: {type: String, required: true},
-  size: {type: int, require: true},
-  price: {trype:int, required:true},
-  description: { type: String, required: true },
-  date: { type: Date, required: true },
+  size: {type: Number, require: true},
+  price: {type: Number, required:true},
+  description: { type: String, required: true }
 }, {
   timestamps: true,
 });
