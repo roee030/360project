@@ -32,8 +32,11 @@ export default class Rooms extends Component {
         return this.state.apartments.map(currentapartments => {
           return <main id="accordion" key={currentapartments.id}>
             <section id={currentapartments._id}>
-            <a href={"#"+currentapartments._id}><h1>{"#"+currentapartments._id},{currentapartments.streetName}</h1></a>
-            <p>{currentapartments.description}</p>
+            <a href={"#"+currentapartments._id}><h1>{currentapartments.city},{currentapartments.streetName}</h1></a>
+            <p>
+            <iframe  src="https://EyeSpy360.vr-360-tour.com/e/NEkBbB93P6Q/e" allowfullscreen allow="microphone; camera; gyroscope; accelerometer"></iframe>
+
+            </p>
             </section>
           </main>
         })
