@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { NONAME } from 'dns';
 const ResultTable = props => (
   <tr>
     <td>{props.ResultTable.floor}</td>
@@ -27,28 +28,20 @@ export default class Rooms extends Component {
             console.log("error fetch data from mongodb");
           })
       }
-      exerciseList() {
+      apartmentList() {
         return this.state.apartments.map(currentapartments => {
-          return <ResultTable ResultTable={currentapartments} key={currentapartments._id}/>;
+          return <main id="accordion" key={currentapartments.id}>
+            <section id={currentapartments._id}>
+            <a href={"#"+currentapartments._id}><h1>{"#"+currentapartments._id},{currentapartments.streetName}</h1></a>
+            <p>{currentapartments.description}</p>
+            </section>
+          </main>
         })
-      }
+      };
     render() {
         return (
           <div>
-          <h3>Logged Exercises</h3>
-          <table className="table">
-            <thead className="thead-light">
-              <tr>
-                <th>Username</th>
-                <th>Description</th>
-                <th>Duration</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              { this.exerciseList() }
-            </tbody>
-          </table>
+          {this.apartmentList()}
         </div>
         )
     }

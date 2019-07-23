@@ -9,6 +9,8 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
+    const id = req.body.id;
+    const streetName = req.body.streetName;
     const numOfRooms = req.body.numOfRooms;
     const floor = req.body.floor;
     const size = req.body.size;
