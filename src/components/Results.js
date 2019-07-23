@@ -4,12 +4,13 @@ import axios from 'axios';
 import { NONAME } from 'dns';
 const ResultTable = props => (
   <tr>
-    <td>{props.ResultTable.floor}</td>
-    <td>{props.ResultTable.floor}</td>
-    <td>{props.ResultTable.floor}</td>
-    <td>{props.ResultTable.numofRoom}</td>
-    <td>{props.ResultTable.price}</td>
+    <td>{props.ResultTable.streetName}</td>
     <td>{props.ResultTable.description}</td>
+    <td>{props.ResultTable.city}</td>
+    <td>{props.ResultTable.flor}</td>
+    <td>{props.ResultTable.numOfRooms}</td>
+    <td>{props.ResultTable.price}</td>
+    <td>{props.ResultTable.size}</td>
   </tr>
 )
 export default class Rooms extends Component {
@@ -30,21 +31,28 @@ export default class Rooms extends Component {
       }
       apartmentList() {
         return this.state.apartments.map(currentapartments => {
-          return <main id="accordion" key={currentapartments.id}>
-            <section id={currentapartments._id}>
-            <a href={"#"+currentapartments._id}><h1>{currentapartments.city},{currentapartments.streetName}</h1></a>
-            <p>
-            <iframe  src="https://EyeSpy360.vr-360-tour.com/e/NEkBbB93P6Q/e" allowfullscreen allow="microphone; camera; gyroscope; accelerometer"></iframe>
-
-            </p>
-            </section>
-          </main>
+          return <ResultTable ResultTable={currentapartments} key={currentapartments._id}></ResultTable>
         })
       };
     render() {
         return (
           <div>
-          {this.apartmentList()}
+          <table className="table">
+          <thead className="thead-light">
+            <tr>
+              <th>Street Name</th>
+              <th>Description</th>
+              <th>City</th>
+              <th>Floor</th>
+              <th>Num Of Rooms</th>
+              <th>Price</th>
+              <th>Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            { this.apartmentList() }
+          </tbody>
+        </table>
         </div>
         )
     }
