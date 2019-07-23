@@ -11,7 +11,9 @@ const Rooms = () => {
                     Our Homes
                 </Link>
             </Banner>
+            
         </Hero>
+       
 
     )
 }
