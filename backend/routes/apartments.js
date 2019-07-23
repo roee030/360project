@@ -9,14 +9,14 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const id = req.body.id;
     const numOfRooms = req.body.numOfRooms;
     const floor = req.body.floor;
     const size = req.body.size;
+    const city = req.body.city;
     const price = req.body.price;
     const description = req.body.description;
 
-  const newApartment = new Apartment({id,numOfRooms,floor,size,price,description});
+  const newApartment = new Apartment({id,city,numOfRooms,floor,size,price,description});
 
   newApartment.save()
     .then(() => res.json('Apartment added!'))

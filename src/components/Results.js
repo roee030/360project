@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+
 export default class Rooms extends Component {
     constructor(props) {
         super(props);
@@ -14,14 +15,17 @@ export default class Rooms extends Component {
             console.log(this.state.apartments)
           })
           .catch((error) => {
-            console.log("error");
+            console.log("error fetch data from mongodb");
           })
       }
+     
     render() {
         return (
-            <div>
-                <h1>fff</h1>
-            </div>
+          <div>
+          <h3>Logged Exercises</h3>
+       
+          
+        </div>
         )
     }
 }
