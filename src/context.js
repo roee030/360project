@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import items from './data';
+import axios from 'axios';
+
 const RoomContext = React.createContext();
 export default class RoomProvider extends Component {
 
@@ -11,21 +13,19 @@ export default class RoomProvider extends Component {
     };
 
     //GetData
-
+    getdata() {
+        axios.get('http://localhost:5000/apartments/')
+          .then(response => {
+            this.setState({ rooms: response.data })
+            //console.log(this.state.rooms)
+          })
+          .catch((error) => {
+            console.log("error fetch data from mongodb");
+          })
+    }
     componentDidMount()
     {
-        let rooms = this.formatData(items);
-        console.log(items);
-    }
-    formatData()
-    {
-        let tempItems = items.map(item => {
-            let id = item.sys.id;
-            let images = item.fields.images.map(image => image.fields.file.url);
-            let room = { ...item.fields, images, id };
-            return room;
-          });
-          return tempItems;
+        this.getdata();
     }
     render() {
         return (

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { NONAME } from 'dns';
+import {RoomContext} from '../context';
+
 const ResultTable = props => (
   <tr>
     <td>{props.ResultTable.streetName}</td>
@@ -14,6 +16,8 @@ const ResultTable = props => (
   </tr>
 )
 export default class Rooms extends Component {
+  static contextType = RoomContext;
+
     constructor(props) {
         super(props);
         
@@ -35,6 +39,10 @@ export default class Rooms extends Component {
         })
       };
     render() {
+      let {rooms} = this.context;
+      rooms = rooms.map(room=>{
+        return <Rooms key={room._id} room={room}/>
+      })
         return (
           <div>
           <table className="table">
