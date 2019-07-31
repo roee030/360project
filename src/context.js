@@ -6,6 +6,7 @@ const RoomContext = React.createContext();
 export default class RoomProvider extends Component {
 
     state = {
+      users:[],
       rooms:[],
       sortedRooms:[],
       featuredRooms:[],
@@ -17,11 +18,18 @@ export default class RoomProvider extends Component {
         axios.get('http://localhost:5000/apartments/')
           .then(response => {
             this.setState({ rooms: response.data })
-            //console.log(this.state.rooms)
           })
           .catch((error) => {
             console.log("error fetch data from mongodb");
           })
+          axios.get('http://localhost:5000/users/')
+          .then(response => {
+            this.setState({ users: response.data })
+          })
+          .catch((error) => {
+            console.log("error fetch data from mongodb");
+          })
+
     }
     componentDidMount()
     {

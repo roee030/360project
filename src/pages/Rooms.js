@@ -20,6 +20,7 @@ export default class Rooms extends Component {
             </Banner>
         </Hero>
         <Input></Input>
+        Recommended Rooms
         <Results></Results>
         <FeaturedRooms></FeaturedRooms>
         </>
