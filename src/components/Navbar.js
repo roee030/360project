@@ -27,13 +27,13 @@ export default class Navbar extends Component {
           <ul
             className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={this.handleToggle}>Home</Link>
             </li>
             <li>
-              <Link to="/rooms">Rooms</Link>
+              <Link to="/rooms" onClick={this.handleToggle}>Rooms</Link>
             </li>
             <li>
-            <Link to="/login">Login</Link>
+            <Link to="/login" onClick={this.handleToggle}>Login</Link>
           </li>
           </ul>
         </div>
