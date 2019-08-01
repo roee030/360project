@@ -35,7 +35,7 @@ export default class LoginBox extends Component {
 
           <button
             type="button"
-            className="btn-primary "
+            className="btn-primary"
             onClick={this
             .submitLogin
             .bind(this)}>Login</button>
