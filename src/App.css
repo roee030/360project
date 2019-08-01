@@ -480,6 +480,7 @@ h6 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-top:60px; 
 }
 
 .box-controller {
@@ -507,7 +508,7 @@ h6 {
 
 .selected-controller {
     transition: border 0.5s ease-out;
-    border-bottom: 2px solid  #70a1ff;
+    border-bottom: 2px solid  #af9a7d;
 }
 
 .box-container {
@@ -536,7 +537,7 @@ h6 {
     /* margin-right: 35px; */
     font-family: Ozxgen, sans-serif;
     font-size: 22px;
-    border-bottom: 2px solid  #70a1ff;
+    border-bottom: 2px solid  #af9a7d;
 }
 
 .box {
@@ -562,7 +563,7 @@ h6 {
 .login-input {
     height: 2.1em;
     border-radius: 3px;
-    border: 1px solid  #70a1ff;
+    border: 1px solid  #000000;
     transition: border 0.4s ease-out;
     padding: 13px;
     font-family: Oxygen, sans-serif;
@@ -572,7 +573,7 @@ h6 {
 }
 
 .login-input:hover {
-    border: 2px solid  #70a1ff;
+    border: 2px solid  #af9a7d;
 }
 
 .login-input:focus {

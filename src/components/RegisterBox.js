@@ -40,7 +40,7 @@ export default class RegisterBox extends Component {
               </div>
               <button
                 type="button"
-                className="login-btn"
+                className="btn-primary"
                 onClick={this
                 .submitRegister
                 .bind(this)}>Register</button>
