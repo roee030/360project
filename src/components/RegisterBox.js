@@ -60,7 +60,11 @@ export default class RegisterBox extends Component {
           openPopup(e) {
             console.log("Hello world!");
           }
-        
+          validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+          }
+
           submitRegister(e) {
         
             console.log(this.state);
@@ -71,13 +75,16 @@ export default class RegisterBox extends Component {
             if (this.state.email == "") {
               this.showValidationErr("email", "Email Cannot be empty!");
             }
-            if (this.state.password == "") {
-              this.showValidationErr("password", "Password Cannot be empty!");
+            if (this.state.password < 6) {
+              this.showValidationErr("password", "Password Cannot be less than 6 characters long!");
+            }
+            if (!this.validateEmail(this.state.email)){
+                this.showValidationErr("email","Not valid Email");
             }
         
       }
     
-      submitRegister(e) {}
+     
     
       render() {
             let usernameErr = null,
@@ -94,22 +101,8 @@ export default class RegisterBox extends Component {
               if (err.elm == "email") {
                 emailErr = err.msg;
               }
-            }
-        
-            let pwdWeak = false,
-              pwdMedium = false,
-              pwdStrong = false;
-        
-            if (this.state.pwdState == "weak") {
-              pwdWeak = true;
-            } else if (this.state.pwdState == "medium") {
-              pwdWeak = true;
-              pwdMedium = true;
-            } else if (this.state.pwdState == "strong") {
-              pwdWeak = true;
-              pwdMedium = true;
-              pwdStrong = true;
-            }
+            } 
+
         return (
           <div className="inner-container">
             <div className="header">
@@ -155,25 +148,11 @@ export default class RegisterBox extends Component {
                       : ""}</small>
       
               </div>
-              {this.state.password && <div className="password-state">
-              <div
-                className={"pwd pwd-weak " + (pwdWeak
-                ? "show"
-                : "")}></div>
-              <div
-                className={"pwd pwd-medium " + (pwdMedium
-                ? "show"
-                : "")}></div>
-              <div
-                className={"pwd pwd-strong " + (pwdStrong
-                ? "show"
-                : "")}></div>
-            </div>}
               <button
                 type="button"
                 className="btn-primary"
                 onClick={this
-                    .openPopup
+                    .submitRegister
                     .bind(this)}
                     onHover={this
                         .openPopup
