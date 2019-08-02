@@ -69,18 +69,26 @@ export default class RegisterBox extends Component {
         
             console.log(this.state);
         
-            if (this.state.username == "") {
-              this.showValidationErr("username", "Username Cannot be empty!");
+            if (this.state.username.length < 3) {
+              this.showValidationErr("username", "Username Cannot less than 3 characters");
             }
             if (this.state.email == "") {
               this.showValidationErr("email", "Email Cannot be empty!");
             }
-            if (this.state.password < 6) {
+            if (this.state.password.length < 6) {
               this.showValidationErr("password", "Password Cannot be less than 6 characters long!");
             }
             if (!this.validateEmail(this.state.email)){
                 this.showValidationErr("email","Not valid Email");
             }
+            if(this.state.username.length>2 &&
+              this.state.password.length>5 &&
+              this.validateEmail(this.state.email)){
+                //confirm register
+                console.log("success");
+
+
+              }
         
       }
     
