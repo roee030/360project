@@ -29,6 +29,11 @@ export default class RoomProvider extends Component {
           .catch((error) => {
             console.log("error fetch data from mongodb");
           })
+          let featuredRooms = rooms.filter(room=>
+            room.featured === true);
+          this.setState({
+            featuredRooms
+          })
 
     }
     componentDidMount()
