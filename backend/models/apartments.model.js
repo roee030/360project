@@ -9,6 +9,7 @@ const apartmentSchema = new Schema({
   floor: {type: String, required: true},
   size: {type: Number, require: true},
   price: {type: Number, required:true},
+  featured: {type: Boolean , required: true , default:false},
   description: { type: String, required: true }
 }, {
   timestamps: true,
