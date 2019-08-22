@@ -16,8 +16,9 @@ router.route('/add').post((req, res) => {
     const city = req.body.city;
     const price = req.body.price;
     const description = req.body.description;
+    const featured = req.body.featured;
 
-  const newApartment = new Apartment({streetName,city,numOfRooms,floor,size,price,description,numOfRooms});
+  const newApartment = new Apartment({streetName,city,numOfRooms,floor,size,price,description,numOfRooms,featured});
 
   newApartment.save()
     .then(() => res.json('Apartment added!'))
