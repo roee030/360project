@@ -35,10 +35,7 @@ export default class RoomProvider extends Component {
     componentDidMount()
     {
         this.getdata();
-        console.log(this.state.rooms);
-        let featuredRooms = this.state.rooms.filter(room => room.featured === true);
         this.setState({
-          featuredRooms,
           loading : false
         })
         

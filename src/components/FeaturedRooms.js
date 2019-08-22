@@ -9,9 +9,9 @@ export default class FeaturedRooms extends Component {
     render() {
         let {rooms,loading} = this.context;    
         rooms = rooms.map(room=>{
-            return <Room key={room.id} room={room}/>
+            if(room.featured === true){
+            return <Room key={room.id} room={room}/>}
         })
-       console.log(rooms);
         return (
             <section className="featured-rooms">
                 <Title title="featured-rooms"/>
