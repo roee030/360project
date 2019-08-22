@@ -92,6 +92,16 @@ export default class RegisterBox extends Component {
               }
         
       }
+    submitNewUser (){
+      axios.post('http://localhost:5000/users/')
+          .then(response => {
+            this.setState({ apartments: response.data })
+            console.log(this.state.apartments)
+          })
+          .catch((error) => {
+            console.log("error fetch data from mongodb");
+          })
+      }
     
      
     

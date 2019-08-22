@@ -1,10 +1,11 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 export default function Rooms({room}) {
-    console.log(Room);
-    return (
-        <div>
-            Hello from rooms
-        </div>
-    )
+    const{name,slug,images,price} = room;
+    return( <article className="room">
+    <div className="img-container">
+        <img src={images[0]} alt="single room" />
+    </div>
+    </article>
+    );
 }
