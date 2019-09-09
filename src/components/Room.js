@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 import defaultImg from '../images/Ariel_Home.jpg'
 import PropTypes from "prop-types";
-export default function Rooms({room}) {
+export default function Room({room}) {
     console.log({room})
     const{_id,description,city,price,iframeSrc,frontImgSrc} = room;
     
@@ -22,6 +22,7 @@ export default function Rooms({room}) {
                 המשך לדף
             </Link>
         </div>
+        <p className="room-info">{description}</p>
     </article>
     );
 }
@@ -33,7 +34,8 @@ Room.propTypes = {
   
         city: PropTypes.string.isRequired,
   
-        frontImgSrc: PropTypes.string.isRequired
+        frontImgSrc: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired
   
     })
   
