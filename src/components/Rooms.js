@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import defaultImg from '../images/Ariel_Home.jpg'
-
+import PropTypes from "prop-types";
 export default function Rooms({room}) {
     console.log({room})
     const{_id,description,city,price,iframeSrc,frontImgSrc} = room;
@@ -18,10 +18,23 @@ export default function Rooms({room}) {
                     
                 </h6>
             </div>
-            <Link to={`/room/${_id}`} className="btn-primary room-link">
+            <Link to={`/rooms/${_id}`} className="btn-primary room-link">
                 המשך לדף
             </Link>
         </div>
     </article>
     );
 }
+Room.propTypes = {
+
+    room: PropTypes.shape({
+  
+        _id: PropTypes.string.isRequired,
+  
+        city: PropTypes.string.isRequired,
+  
+        frontImgSrc: PropTypes.string.isRequired
+  
+    })
+  
+  };

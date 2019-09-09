@@ -4,7 +4,7 @@ class SingleRoom extends Component {
     render() {
         return (
             <div>
-                hello from single room page
+               <h1> hello from single room page</h1>
             </div>
         )
     }
