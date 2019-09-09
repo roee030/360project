@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import defaultImg from '../images/room-1.jpeg'
+import defaultImg from '../images/Ariel_Home.jpg'
 export default function Rooms({room}) {
     const{name,slug,images,price} = room;
     return( 

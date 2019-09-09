@@ -10,7 +10,9 @@ const apartmentSchema = new Schema({
   size: {type: Number, require: true},
   price: {type: Number, required:true},
   featured: {type: Boolean , required: true , default:false},
-  description: { type: String, required: true }
+  description: { type: String, required: true },
+  iframeSrc: {type: String, required: true},
+  frontImgSrc: {type: String, required: true}
 }, {
   timestamps: true,
 });

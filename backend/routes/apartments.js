@@ -17,8 +17,10 @@ router.route('/add').post((req, res) => {
     const price = req.body.price;
     const description = req.body.description;
     const featured = req.body.featured;
+    const iframeSrc =  req.body.iframeSrc;
+    const frontImgSrc = req.body.frontImgSrc;
 
-  const newApartment = new Apartment({streetName,city,numOfRooms,floor,size,price,description,numOfRooms,featured});
+  const newApartment = new Apartment({streetName,city,numOfRooms,floor,size,price,description,numOfRooms,featured,iframeSrc,frontImgSrc});
 
   newApartment.save()
     .then(() => res.json('Apartment added!'))
