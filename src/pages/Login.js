@@ -30,8 +30,8 @@ export default class Login extends Component {
                     <div className="box-container">
                     {this.state.isLoginOpen && <LoginBox/>}
                     {this.state.isRegisterOpen && <RegisterBox/>}
+            
                     </div>
-                    
             </div>
         )
     }
