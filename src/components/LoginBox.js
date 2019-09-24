@@ -3,10 +3,21 @@ import React, { Component } from 'react'
 export default class LoginBox extends Component {
     constructor(props){
         super(props);
-        this.state = {};
+        this.state = {
+          username: '',
+          password:''
+        };
     }
-    submitLogin(e) {}
+    submitLogin(e) {
+      e.preventDefault();
+      console.log(this.state.username);
+    }
+    onChangeUserName(event) {
+      this.setState({
+        username:event.target.value
+      });
 
+  }
   render() {
     return (
       <div className="inner-container">
@@ -21,7 +32,9 @@ export default class LoginBox extends Component {
               type="text"
               name="username"
               className="login-input"
-              placeholder="Username"/>
+              placeholder="Username"
+              onChange={this.onChangeUserName.bind(this)}
+              />
           </div>
 
           <div className="input-group">
