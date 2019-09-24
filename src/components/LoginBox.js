@@ -10,14 +10,19 @@ export default class LoginBox extends Component {
     }
     submitLogin(e) {
       e.preventDefault();
-      console.log(this.state.username);
+      console.log(this.state);
     }
     onChangeUserName(event) {
       this.setState({
         username:event.target.value
       });
-
   }
+  onChangePassword(event) {
+    this.setState({
+      password:event.target.value
+    });
+
+}
   render() {
     return (
       <div className="inner-container">
@@ -43,7 +48,9 @@ export default class LoginBox extends Component {
               type="password"
               name="password"
               className="login-input"
-              placeholder="Password"/>
+              placeholder="Password"
+              onChange={this.onChangePassword.bind(this)}
+              />
           </div>
 
           <button
