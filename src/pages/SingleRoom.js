@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import {RoomContext} from '../context';
 import { Link } from "react-router-dom";
+import Banner from "../components/Banner";
+
+import StyledHero  from '../components/StyledHero'
+const defaultBcg = "../images/Virtual_Tours.jpg";
 
 class SingleRoom extends Component {
     static contextType = RoomContext;
@@ -14,6 +18,7 @@ class SingleRoom extends Component {
     render() {
         const {getRoom} = this.context;
         const room = getRoom(this.state.id);
+        //If there is no room = Go back to rooms page
         if (!room) {
             return (
               <div className="error">
@@ -23,9 +28,11 @@ class SingleRoom extends Component {
                 </Link>
               </div>
             );
-          }        return (
+          }    
+          
+          return (
             <div>
-               <h1> hello from single room page</h1>
+           
             </div>
         )
     }
