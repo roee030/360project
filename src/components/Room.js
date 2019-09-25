@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import defaultImg from '../images/Ariel_Home.jpg'
+import defaultImg from '../images/Virtual_Tour.jpg'
 import PropTypes from "prop-types";
 export default function Room({room}) {
     console.log({room})
@@ -11,7 +11,7 @@ export default function Room({room}) {
     <article className="room">
         
         <div className="img-container">
-            <img src={ frontImgSrc } alt="single room" />
+            <img src={ frontImgSrc || defaultImg} alt="single room" />
             <div className="price-top">
                 <h6>
                     {city}
