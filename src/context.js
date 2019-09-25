@@ -29,9 +29,14 @@ export default class RoomProvider extends Component {
           .catch((error) => {
             console.log("error fetch data from mongodb");
           })
-          
-
     }
+    // get specific room
+    getRoom = id =>
+    {
+      let tempRoom = [...this.state.rooms];
+      const room = tempRoom.find(room => room._id == id);
+      return room;
+    };
     componentDidMount()
     {
         this.getdata();
@@ -42,7 +47,7 @@ export default class RoomProvider extends Component {
     }
     render() {
         return (
-            <RoomContext.Provider value={{...this.state}}>
+            <RoomContext.Provider value={{...this.state, getRoom: this.getRoom}}>
             {this.props.children}
             </RoomContext.Provider>
         )
