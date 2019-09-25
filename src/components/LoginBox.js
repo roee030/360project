@@ -5,7 +5,8 @@ export default class LoginBox extends Component {
         super(props);
         this.state = {
           username: '',
-          password:''
+          password:'',
+          users: ''
         };
     }
     submitLogin(e) {
@@ -21,9 +22,10 @@ export default class LoginBox extends Component {
     this.setState({
       password:event.target.value
     });
-
 }
   render() {
+ 
+    
     return (
       <div className="inner-container">
         <div className="header">
