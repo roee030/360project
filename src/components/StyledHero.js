@@ -4,7 +4,8 @@ const StyledHero = styled.header`
   min-height: 60vh;
   background: url(${props => (props.img ? props.img : defaultImg)});
   display: flex;
-  
+  background-size: cover;
+
   align-items: center;
   justify-content: center;
 `;

@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import {RoomContext} from '../context';
 import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
+import defaultBcg from "../images/room-1.jpeg";
 
 import StyledHero  from '../components/StyledHero'
-const defaultBcg = "../images/Virtual_Tours.jpg";
 
 class SingleRoom extends Component {
     static contextType = RoomContext;
@@ -29,12 +29,50 @@ class SingleRoom extends Component {
               </div>
             );
           }    
-          
+          const {
+            name,
+            description,
+            capacity,
+            size,
+            price,
+            extras,
+            city,
+            frontImgSrc,
+            iframeSrc,
+            streetView
+          } = room;
+          console.log(room)
           return (
-            <div>
-           
+            <>
+            <StyledHero img={frontImgSrc || this.state.defaultBcg}>
+              <Banner title={`מיקום:${city}`}>
+                <Link to="/rooms" className="btn-primary">
+                  back to rooms
+                </Link>
+              </Banner>
+            </StyledHero>
+            <section className="single-room">
+            <div className="single-room-images">
+              
+                <iframe src={iframeSrc} />
             </div>
-        )
+            <div className="single-room-info">
+              <article className="desc">
+                <h3>details</h3>
+                <p>{description}</p>
+              </article>
+              <article className="info">
+                <h3>info</h3>
+                <h6>price : ${price}</h6>
+                <h6>size : {size} SQFT</h6>
+                
+              
+              </article>
+            </div>
+          </section>
+  
+            </>
+        );
     }
 }
 export default SingleRoom;
