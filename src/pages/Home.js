@@ -5,13 +5,12 @@ import Banner from '../components/Banner';
 import Services from '../components/Services';
 import FeaturedRooms from '../components/FeaturedRooms';
 
+
 function Home() {
-    
-    return (
+
+        return (
         <>
-        componentDidMount() {
-            window.scrollTo(0, 0)
-          }
+        
         <Hero hero="defaultHero">
             <Banner title="360° Homes" subtitle="Click here to view all apartments">
                 <Link to="/rooms" className="btn-primary">

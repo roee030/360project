@@ -13,7 +13,7 @@ const apartmentSchema = new Schema({
   description: { type: String, required: true },
   iframeSrc: {type: String, required: true},
   frontImgSrc: {type: String, required: true},
-  streetViewSrc: {trype: String, required: true}
+  streetViewSrc: {type: String, required: true}
 }, {
   timestamps: true,
 });
