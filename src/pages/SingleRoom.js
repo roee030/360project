@@ -15,6 +15,9 @@ class SingleRoom extends Component {
             id:this.props.match.params.id
         }
     }
+    componentDidMount() {
+      window.scrollTo(0, 0)
+    }
     render() {
         const {getRoom} = this.context;
         const room = getRoom(this.state.id);
@@ -52,9 +55,8 @@ class SingleRoom extends Component {
               </Banner>
             </StyledHero>
             <section className="single-room">
-            <div className="single-room-images">
-              
-                <iframe src={iframeSrc} />
+            <div className="single-room-images iframe-container">
+                <iframe  src={iframeSrc} />
             </div>
             <div className="single-room-info">
               <article className="desc">
@@ -64,7 +66,7 @@ class SingleRoom extends Component {
               <article className="info">
                 <h3>info</h3>
                 <h6>price : ${price}</h6>
-                <h6>size : {size} SQFT</h6>
+                <h6>size : {size} SQM</h6>
                 
               
               </article>

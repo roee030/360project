@@ -8,6 +8,9 @@ import FeaturedRooms from '../components/FeaturedRooms';
 import Input from '../components/input';
 export default class Rooms extends Component {
     static contextType = RoomContext;
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
     render() {
         let {rooms} = this.context;
         return (
