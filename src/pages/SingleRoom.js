@@ -42,9 +42,9 @@ class SingleRoom extends Component {
             city,
             frontImgSrc,
             iframeSrc,
-            streetView
+            streetViewSrc
           } = room;
-          console.log(room)
+          console.log(room.streetViewSrc)
           return (
             <>
             <StyledHero img={frontImgSrc || this.state.defaultBcg}>
@@ -57,6 +57,9 @@ class SingleRoom extends Component {
             <section className="single-room">
             <div className="single-room-images iframe-container">
                 <iframe  src={iframeSrc} />
+            </div>
+            <div className="single-room-images iframe-container">
+            <iframe src={streetViewSrc} />
             </div>
             <div className="single-room-info">
               <article className="desc">
