@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import Results from '../components/Results';
 import {RoomContext} from '../context';
 import FeaturedRooms from '../components/FeaturedRooms';
-import Input from '../components/input';
+import RoomContainer from '../components/RoomContainer';
 export default class Rooms extends Component {
     static contextType = RoomContext;
     componentDidMount() {
@@ -22,10 +22,7 @@ export default class Rooms extends Component {
                 </Link>
             </Banner>
         </Hero>
-        <Input></Input>
-        Recommended Rooms
-        <Results></Results>
-        <FeaturedRooms></FeaturedRooms>
+       <RoomContainer/>
         </>
     )
 }
