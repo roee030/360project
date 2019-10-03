@@ -22,7 +22,7 @@ export default class Rooms extends Component {
                 </Link>
             </Banner>
         </Hero>
-       <RoomContainer/>
+       <RoomContainer rooms={rooms}/>
         </>
     )
 }

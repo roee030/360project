@@ -14,7 +14,7 @@ export default class RoomProvider extends Component {
     };
 
     //GetData
-    getdata() {
+    getRooms() {
         axios.get('http://localhost:5000/apartments/')
           .then(response => {
             this.setState({ rooms: response.data })
@@ -22,7 +22,10 @@ export default class RoomProvider extends Component {
           .catch((error) => {
             console.log("error fetch data from mongodb");
           })
-          axios.get('http://localhost:5000/users/')
+    }
+    //Get Users
+    getUsers(){
+      axios.get('http://localhost:5000/users/')
           .then(response => {
             this.setState({ users: response.data })
           })
@@ -39,7 +42,7 @@ export default class RoomProvider extends Component {
     };
     componentDidMount()
     {
-        this.getdata();
+        this.getRooms();
         this.setState({
           loading : false
         })

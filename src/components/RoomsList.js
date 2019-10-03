@@ -8,7 +8,7 @@ const RoomsList = ({ rooms }) => {
       </div>
     );
   }
-  console.log(rooms)
+ 
   return (
     <section className="roomslist">
       <div className="roomslist-center">

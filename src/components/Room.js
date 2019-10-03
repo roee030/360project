@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import PropTypes from "prop-types";
 export default function Room({room}) {
     const defaultImg = '../images/Virtual_Tours.jpg'
-    console.log({room})
+    
     const{_id,description,city,price,iframeSrc,frontImgSrc} = room;
     
     return( 
