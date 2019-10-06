@@ -4,21 +4,22 @@ import RoomsList from './RoomsList'
 import {withRoomConsumer} from '../context'
 import Loading from './Loading'
 import Room from './Room'
+
 function RoomContainer({ context }) {
-  
+
     const { loading, sortedRooms, rooms } = context;
 
-    console.log({rooms})
-    if (loading) {
-      return <Loading />;
-    }
-    
+    const total_room = rooms;
+
+    console.log(rooms)
+   
+  
     return (
       <>
-        <RoomsFilter rooms={rooms} />
+        <RoomsFilter rooms={total_room} />
         <RoomsList rooms={sortedRooms} />
       </>
     );
   }
-  
-  export default withRoomConsumer(RoomContainer);
+
+export default withRoomConsumer(RoomContainer);

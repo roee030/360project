@@ -17,7 +17,7 @@ export default class RoomProvider extends Component {
     getRooms() {
         axios.get('http://localhost:5000/apartments/')
           .then(response => {
-            this.setState({ rooms: response.data })
+            this.setState({ rooms: response.data,loading:false })
           })
           .catch((error) => {
             console.log("error fetch data from mongodb");
