@@ -10,7 +10,15 @@ export default class RoomProvider extends Component {
       rooms:[],
       sortedRooms:[],
       featuredRooms:[],
-      loading:true
+      loading:true,
+      type: all,
+      capacity:1,
+      price:0,
+      minPrice:0,
+      maxPrice:0,
+      minSize:0,
+      breakfast: false,
+      pets: false 
     };
 
     //GetData
@@ -19,15 +27,8 @@ export default class RoomProvider extends Component {
           .then(response => {
             this.setState({ 
               rooms: response.data,
-              loading:true,
-              type: all,
-              capacity:1,
-              price:0,
-              minPrice:0,
-              maxPrice:0,
-              minSize:0,
-              breakfast: false,
-              pets: false 
+              loading:false,
+              
               })
           })
           .catch((error) => {
