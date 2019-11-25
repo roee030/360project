@@ -30,6 +30,8 @@ export default class RoomProvider extends Component {
             this.setState({ 
               rooms: response.data,
               loading:false,
+              maxPrice,
+              maxSize
               
               })
           })
