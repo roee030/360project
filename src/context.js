@@ -25,6 +25,8 @@ export default class RoomProvider extends Component {
     getRooms() {
         axios.get('http://localhost:5000/apartments/')
           .then(response => {
+            let maxPrice = Math.max(...response.data.map(room=> room.price))
+            let maxSize = Math.max(...response.data.map(room=> room.size))
             this.setState({ 
               rooms: response.data,
               loading:false,
