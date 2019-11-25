@@ -49,6 +49,13 @@ export default class RoomProvider extends Component {
             console.log("error fetch data from mongodb");
           })
     }
+    handleChange = (event) =>{
+      const type = event.target.type
+      const name = event.target.name
+      const value = event.target.value
+      
+    }
+
     // get specific room
     getRoom = id =>
     {
@@ -56,6 +63,7 @@ export default class RoomProvider extends Component {
       const room = tempRoom.find(room => room._id == id);
       return room;
     };
+
     componentDidMount()
     {
         this.getRooms();
@@ -66,7 +74,11 @@ export default class RoomProvider extends Component {
     }
     render() {
         return (
-            <RoomContext.Provider value={{...this.state, getRoom: this.getRoom}}>
+            <RoomContext.Provider value={{
+              ...this.state,
+              getRoom: this.getRoom,
+              handleChange: this.handleChange
+            }}>
             {this.props.children}
             </RoomContext.Provider>
         )
