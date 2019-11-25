@@ -11,7 +11,7 @@ export default class RoomProvider extends Component {
       sortedRooms:[],
       featuredRooms:[],
       loading:true,
-      type: all,
+      type: 'all',
       capacity:1,
       price:0,
       minPrice:0,
@@ -54,6 +54,9 @@ export default class RoomProvider extends Component {
       const name = event.target.name
       const value = event.target.value
       
+    }
+    filterRooms = () => {
+      console.log("hellooo")
     }
 
     // get specific room
